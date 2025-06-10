@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Animation Settings")]
     public Animator animator;
+    
+    [Header("Forms Settings")]
+    public FormManager formManager;
 
     private void Awake()
     {
@@ -28,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Input is checked in Update() for responsiveness, as it runs every frame.
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Speed", rb.velocity.magnitude);
 
         // Ground status and jump input are also checked here.
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -43,6 +45,20 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
+        
+        //Set animation for object
+        animator.SetFloat("Speed", rb.velocity.magnitude);
+        if(!isGrounded)
+        {
+            animator.SetFloat("Speed", 0f);
+            animator.SetBool("Jump", true);
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
+        
+        FormChange();
     }
 
     private void FixedUpdate()
@@ -57,6 +73,15 @@ public class PlayerMovement : MonoBehaviour
         if (groundCheck == null) return;
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+
+    private void FormChange()
+    {
+        for (int i = 0; i < formManager.formList.Count; i++)
+        {
+            if(Input.GetKeyDown(formManager.formList[i].activationKey))
+                formManager.ChangeForm(i);
+        }
     }
 
     private void Flip()

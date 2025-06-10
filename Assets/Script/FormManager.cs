@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class FormManager : MonoBehaviour
 {
-    public List<RuntimeAnimatorController> formList = new List<RuntimeAnimatorController>();
+    [System.Serializable]
+    public class Form
+    {
+        public RuntimeAnimatorController animatorController;
+        public KeyCode activationKey;
+    }
+    
+    public List<Form> formList = new List<Form>();
     public Animator targetAnimator;
 
-    public void AddForm(RuntimeAnimatorController form)
+    public void AddForm(Form form)
     {
         formList.Add(form);
     }
 
-    public void ChangeForm(RuntimeAnimatorController form)
+    public void ChangeForm(int formIndex)
     {
-        targetAnimator.runtimeAnimatorController = form;
+        if(Input.GetKeyDown(formList[formIndex].activationKey))
+            targetAnimator.runtimeAnimatorController = formList[formIndex].animatorController;
     }
 }
