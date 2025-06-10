@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
+    
+    [Header("Animation Settings")]
+    public Animator animator;
 
     private void Awake()
     {
@@ -25,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Input is checked in Update() for responsiveness, as it runs every frame.
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("Speed", rb.velocity.magnitude);
 
         // Ground status and jump input are also checked here.
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -43,8 +47,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+
+        Flip();
     }
     
     private void OnDrawGizmosSelected()
@@ -52,5 +57,17 @@ public class PlayerMovement : MonoBehaviour
         if (groundCheck == null) return;
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+
+    private void Flip()
+    {
+        if (horizontalInput > 0)
+        {
+            transform.rotation = Quaternion.Euler(0f,0f,0f);
+        }
+        else if(horizontalInput < 0)
+        {
+            transform.rotation = Quaternion.Euler(0f,180f,0f);
+        }
     }
 }
