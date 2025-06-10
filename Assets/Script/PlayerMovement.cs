@@ -15,6 +15,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
+    
+    [Header("Animation Settings")]
+    public Animator animator;
+    
+    [Header("Forms Settings")]
+    public FormManager formManager;
 
     private void Awake()
     {
@@ -39,12 +45,27 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
+        
+        //Set animation for object
+        animator.SetFloat("Speed", rb.velocity.magnitude);
+        if(!isGrounded)
+        {
+            animator.SetFloat("Speed", 0f);
+            animator.SetBool("Jump", true);
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
+        
+        FormChange();
     }
 
     private void FixedUpdate()
     {
-
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+
+        Flip();
     }
     
     private void OnDrawGizmosSelected()
@@ -52,5 +73,26 @@ public class PlayerMovement : MonoBehaviour
         if (groundCheck == null) return;
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+
+    private void FormChange()
+    {
+        for (int i = 0; i < formManager.formList.Count; i++)
+        {
+            if(Input.GetKeyDown(formManager.formList[i].activationKey))
+                formManager.ChangeForm(i);
+        }
+    }
+
+    private void Flip()
+    {
+        if (horizontalInput > 0)
+        {
+            transform.rotation = Quaternion.Euler(0f,0f,0f);
+        }
+        else if(horizontalInput < 0)
+        {
+            transform.rotation = Quaternion.Euler(0f,180f,0f);
+        }
     }
 }
