@@ -5,13 +5,6 @@ using UnityEngine;
 
 public class FormManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class Form
-    {
-        public RuntimeAnimatorController animatorController;
-        public KeyCode activationKey;
-    }
-    
     public List<Form> formList = new List<Form>();
     public Animator targetAnimator;
 
