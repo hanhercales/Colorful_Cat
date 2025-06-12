@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GreenForm
   m_EditorClassIdentifier: 
   name: GreenForm
+  formIcon: {fileID: -96793338, guid: c6924645083674a438657364ba427ad4, type: 3}
   animatorController: {fileID: 9100000, guid: 8a1ad7ebeb60ef4439dbacaa119bbdad, type: 2}
   activationKey: 52

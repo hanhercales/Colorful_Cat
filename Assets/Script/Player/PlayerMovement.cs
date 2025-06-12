@@ -88,7 +88,10 @@ public class PlayerMovement : MonoBehaviour
     private void Flip()
     {
         isFacingRight = !isFacingRight;
-        transform.rotation = isFacingRight ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+        
+        Vector3 newScale = transform.localScale;
+        newScale.x = (isFacingRight ? 1 : -1 ) * Mathf.Abs(transform.localScale.x);
+        transform.localScale = newScale;
         
         if (keyFollower != null)
         {
