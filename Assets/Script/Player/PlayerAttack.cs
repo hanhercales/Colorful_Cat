@@ -1,9 +1,11 @@
-using System;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject[] projectiles;
+    
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
@@ -24,5 +26,21 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         cooldownTimer = 0f;
+        
+        projectiles[FindBullet()].transform.position = firePoint.position;
+        projectiles[FindBullet()].GetComponent<PlayerProjectiles>().SetDirection(Mathf.Sign(transform.localScale.x));
+    }
+
+    private int FindBullet()
+    {
+        for (int i = 0; i < projectiles.Length; i++)
+        {
+            if (!projectiles[i].activeInHierarchy)
+            {
+                return i;
+            }
+        }
+
+        return 0;
     }
 }
