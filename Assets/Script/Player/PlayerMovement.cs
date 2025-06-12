@@ -6,19 +6,17 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontalInput;
     private bool isGrounded;
-
-    [Header("Movement Settings")]
+    private bool isFacingRight = true; 
+    
     public float moveSpeed = 8f;
     public float jumpForce = 16f;
-
-    [Header("Ground Check")]
+    
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
     
-    [Header("Animation Settings")]
     public Animator animator;
-    
+    public Key keyFollower;
     [Header("Forms Settings")]
     public FormManager formManager;
 
@@ -65,7 +63,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
 
-        Flip();
+        if ((horizontalInput > 0 && !isFacingRight) || (horizontalInput < 0 && isFacingRight))
+        {
+            Flip();
+        }
     }
     
     private void OnDrawGizmosSelected()
@@ -86,13 +87,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (horizontalInput > 0)
+        isFacingRight = !isFacingRight;
+        transform.rotation = isFacingRight ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+        
+        if (keyFollower != null)
         {
-            transform.rotation = Quaternion.Euler(0f,0f,0f);
+            keyFollower.horizontalOffset *= -1;
         }
-        else if(horizontalInput < 0)
-        {
-            transform.rotation = Quaternion.Euler(0f,180f,0f);
-        }
+    }
+
+    public bool canAttack()
+    {
+        return isGrounded;
     }
 }

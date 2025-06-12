@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6727315703524390361}
   - component: {fileID: 113751210404279674}
   - component: {fileID: 3802628304516860343}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cat
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -121,15 +121,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343da8104136eee42a31b36c0447eee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  jumpForce: 6
+  moveSpeed: 5
+  jumpForce: 7
   groundCheck: {fileID: 6157539387794937254}
   groundCheckRadius: 0.3
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 1295979591416706275}
-  formManager: {fileID: 0}
+  keyFollower: {fileID: 0}
 --- !u!50 &113751210404279674
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.5
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d6f1431ddf4aaa94f8a6c64bc714a194, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
