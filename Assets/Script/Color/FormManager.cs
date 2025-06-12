@@ -15,6 +15,7 @@ public class FormManager : MonoBehaviour
     public List<Form> formList = new List<Form>();
     public Animator targetAnimator;
     public string collectedForms = "CollectedForms";
+    public Form currentForm;
 
     [SerializeField] private FormsIconsDisplay formsIconsDisplay;
     [SerializeField] private GameObject[] formDisplaySlot;
@@ -37,12 +38,15 @@ public class FormManager : MonoBehaviour
             Debug.Log("Not found any save");
             InitNewFormList();
         }
+        
+        ChangeForm(0);
     }
 
     public void InitNewFormList()
     {
         formList.Clear();
         AddForm(defaultForm);
+        currentForm = defaultForm;
     }
 
     public void AddForm(Form form)
@@ -53,8 +57,8 @@ public class FormManager : MonoBehaviour
 
     public void ChangeForm(int formIndex)
     {
-        if(Input.GetKeyDown(formList[formIndex].activationKey))
-            targetAnimator.runtimeAnimatorController = formList[formIndex].animatorController;
+        targetAnimator.runtimeAnimatorController = formList[formIndex].animatorController;
+        currentForm = formList[formIndex];
     }
 
     public void SaveForms()
