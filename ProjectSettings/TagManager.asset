@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Key
+  - Enemy
+  - Ground
+  - ColorCube
   layers:
   - Default
   - TransparentFX
