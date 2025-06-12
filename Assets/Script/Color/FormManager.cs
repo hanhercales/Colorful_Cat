@@ -16,6 +16,7 @@ public class FormManager : MonoBehaviour
     public Animator targetAnimator;
     public string collectedForms = "CollectedForms";
 
+    [SerializeField] private FormsIconsDisplay formsIconsDisplay;
     [SerializeField] private GameObject[] formDisplaySlot;
     [SerializeField] private string formResourcesPath = "FormSO";
     [SerializeField] private Form defaultForm;
@@ -47,26 +48,13 @@ public class FormManager : MonoBehaviour
     public void AddForm(Form form)
     {
         formList.Add(form);
-        FormDisplayUpdate();
+        formsIconsDisplay.UpdateDisplayedForms();
     }
 
     public void ChangeForm(int formIndex)
     {
         if(Input.GetKeyDown(formList[formIndex].activationKey))
             targetAnimator.runtimeAnimatorController = formList[formIndex].animatorController;
-    }
-
-    private void FormDisplayUpdate()
-    {
-        for (int i = 0; i < formList.Count; i++)
-        {
-            formDisplaySlot[i].SetActive(true);
-        }
-    }
-
-    private void OnEnable()
-    {
-        FormDisplayUpdate();
     }
 
     public void SaveForms()
