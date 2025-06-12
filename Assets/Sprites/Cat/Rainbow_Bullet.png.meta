@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5934dc9802ab0d1489f8d91550e6427a
-      internalID: -780086620
+      spriteID: 47b8d6f417928d24e9befa56fee39a3f
+      internalID: -216381396
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e353125bff554424889cab86aaa7a06e
-      internalID: -1403598973
+      spriteID: f905776b6013a1542a56bf3c094f575b
+      internalID: -151849977
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 785feec0ba0e62a4c934775de3c8da65
-      internalID: 1524539266
+      spriteID: d7aea6da98fc1b14f8c9c6f534578aae
+      internalID: -1450737712
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e46d86a82f658044eb897e077f210ae0
-      internalID: 832884469
+      spriteID: fce2dc72e0962554db22c944d91b28f2
+      internalID: 250178585
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4148ec4232e3f584eb24685439ba54a5
-      internalID: 1588406034
+      spriteID: aefc7323f3464c04f98a8173d6308dac
+      internalID: 886325891
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d27dc9b4e065234b91336ec92d7b855
-      internalID: 1490459900
+      spriteID: 8fc98942666ea174fb2cbc8a92e9a510
+      internalID: 73277740
       vertices: []
       indices: 
       edges: []
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5ff2dcfbf9025e4f87a16c5ed2b0bae
-      internalID: -1518382079
+      spriteID: fc54481f55f5fce47ba6df6c00f74619
+      internalID: -192081323
       vertices: []
       indices: 
       edges: []
@@ -271,8 +271,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b48cc04a6cf0fb409a90a3ea82c1309
-      internalID: -555688715
+      spriteID: 7faf5882c76da534d9f9da428c5bed9a
+      internalID: -356242474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rainbow_Bullet_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166e0cb9c7bf5234babfcaaf92da00f3
+      internalID: -1764813225
       vertices: []
       indices: 
       edges: []
@@ -288,14 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rainbow_Bullet_0: -780086620
-      Rainbow_Bullet_1: -1403598973
-      Rainbow_Bullet_2: 1524539266
-      Rainbow_Bullet_3: 832884469
-      Rainbow_Bullet_4: 1588406034
-      Rainbow_Bullet_5: 1490459900
-      Rainbow_Bullet_6: -1518382079
-      Rainbow_Bullet_7: -555688715
+      Rainbow_Bullet_0: -216381396
+      Rainbow_Bullet_1: -151849977
+      Rainbow_Bullet_2: -1450737712
+      Rainbow_Bullet_3: 250178585
+      Rainbow_Bullet_4: 886325891
+      Rainbow_Bullet_5: 73277740
+      Rainbow_Bullet_6: -192081323
+      Rainbow_Bullet_7: -356242474
+      Rainbow_Bullet_8: -1764813225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
