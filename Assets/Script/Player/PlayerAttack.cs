@@ -27,8 +27,14 @@ public class PlayerAttack : MonoBehaviour
     {
         cooldownTimer = 0f;
         
-        projectiles[FindBullet()].transform.position = firePoint.position;
-        projectiles[FindBullet()].GetComponent<PlayerProjectiles>().SetDirection(Mathf.Sign(transform.localScale.x));
+        int bulletIndex = FindBullet();
+    
+        // 2. Get a reference to that specific bullet GameObject.
+        GameObject bullet = projectiles[bulletIndex];
+
+        // 3. Set its position and fire it.
+        bullet.transform.position = firePoint.position;
+        bullet.GetComponent<PlayerProjectiles>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
     private int FindBullet()

@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class PlayerProjectiles : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private int damage = 1;
+    [SerializeField] private float speed = 10f;
+    
     private float direction;
     private bool hit;
     private float lifetime;
@@ -30,6 +32,10 @@ public class PlayerProjectiles : MonoBehaviour
         {
             hit = true;
             boxCollider.enabled = false;
+            if (collision.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth))
+            {
+                enemyHealth.TakeDamage(damage);
+            }
             Deactivate();
         }
     }
