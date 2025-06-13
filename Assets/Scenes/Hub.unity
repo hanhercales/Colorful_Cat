@@ -4407,17 +4407,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6157539387794937254, guid: ce198bdbadf0ee74a8a03efb3c9d67e0, type: 3}
   m_PrefabInstance: {fileID: 1878301133136231935}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1601256300 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4773067509115356287, guid: ce198bdbadf0ee74a8a03efb3c9d67e0, type: 3}
-  m_PrefabInstance: {fileID: 1878301133136231935}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1550166410ddc44bc188d9fd34b9f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1659695555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5376,10 +5365,6 @@ PrefabInstance:
       propertyPath: keyFollower
       value: 
       objectReference: {fileID: 1318462595}
-    - target: {fileID: 6727315703524390361, guid: ce198bdbadf0ee74a8a03efb3c9d67e0, type: 3}
-      propertyPath: playerAttack
-      value: 
-      objectReference: {fileID: 1601256300}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
