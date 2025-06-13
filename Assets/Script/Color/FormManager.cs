@@ -16,6 +16,7 @@ public class FormManager : MonoBehaviour
     public Animator targetAnimator;
     public string collectedForms = "CollectedForms";
     public Form currentForm;
+    public GameObject[] projectiles;
 
     [SerializeField] private FormsIconsDisplay formsIconsDisplay;
     [SerializeField] private GameObject[] formDisplaySlot;
@@ -59,6 +60,11 @@ public class FormManager : MonoBehaviour
     {
         targetAnimator.runtimeAnimatorController = formList[formIndex].animatorController;
         currentForm = formList[formIndex];
+        
+        for (int i = 0; i < projectiles.Length; i++)
+        {
+            projectiles[i].GetComponent<SpriteRenderer>().sprite = formList[formIndex].bulletSprite;
+        }
     }
 
     public void SaveForms()

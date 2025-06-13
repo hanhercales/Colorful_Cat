@@ -5,6 +5,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] projectiles;
+    public FormManager formManager;
     
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;

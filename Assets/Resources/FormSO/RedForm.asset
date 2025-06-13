@@ -16,3 +16,4 @@ MonoBehaviour:
   formIcon: {fileID: 1459135603, guid: c6924645083674a438657364ba427ad4, type: 3}
   animatorController: {fileID: 9100000, guid: b2fba0eac6b2be04c9f2571ab6ff3411, type: 2}
   activationKey: 49
+  bulletSprite: {fileID: -151849977, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}

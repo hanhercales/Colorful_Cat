@@ -918,6 +918,17 @@ MonoBehaviour:
   targetAnimator: {fileID: 1601256298}
   collectedForms: CollectedForms
   currentForm: {fileID: 0}
+  projectiles:
+  - {fileID: 1189600207}
+  - {fileID: 1487604060}
+  - {fileID: 1422058219}
+  - {fileID: 34893384}
+  - {fileID: 225502174}
+  - {fileID: 772037675}
+  - {fileID: 1839686893}
+  - {fileID: 126947151}
+  - {fileID: 1857666504}
+  - {fileID: 134835495}
   formsIconsDisplay: {fileID: 1033949849}
   formDisplaySlot: []
   formResourcesPath: FormSO
@@ -5262,6 +5273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 4773067509115356287, guid: ce198bdbadf0ee74a8a03efb3c9d67e0, type: 3}
+      propertyPath: formManager
+      value: 
+      objectReference: {fileID: 396091065}
     - target: {fileID: 4773067509115356287, guid: ce198bdbadf0ee74a8a03efb3c9d67e0, type: 3}
       propertyPath: projectiles.Array.data[0]
       value: 

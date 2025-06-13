@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
     
     public Animator animator;
     public Key keyFollower;
-    [Header("Forms Settings")]
-    public FormManager formManager;
+    public PlayerAttack playerAttack;
 
     private void Awake()
     {
@@ -78,10 +77,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FormChange()
     {
-        for (int i = 0; i < formManager.formList.Count; i++)
+        for (int i = 0; i < playerAttack.formManager.formList.Count; i++)
         {
-            if(Input.GetKeyDown(formManager.formList[i].activationKey))
-                formManager.ChangeForm(i);
+            if(Input.GetKeyDown(playerAttack.formManager.formList[i].activationKey))
+                playerAttack.formManager.ChangeForm(i);
         }
     }
 

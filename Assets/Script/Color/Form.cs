@@ -9,4 +9,5 @@ public class Form : ScriptableObject
     public Sprite formIcon;
     public RuntimeAnimatorController animatorController;
     public KeyCode activationKey;
+    public Sprite bulletSprite;
 }

@@ -16,18 +16,28 @@ public class ColorCube : MonoBehaviour
         {
             if (_form.name == form.name)
             {
-                Destroy(this.gameObject);
+                ColorRestore();
+                break;
+            }
+            else
+            {
+                tilemap.material.SetFloat("_GrayscaleAmount", 1f);
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D player)
     {
-        if (player.tag == "Player")
+        if (player.CompareTag("Player"))
         {
             formManager.AddForm(form);
-            tilemap.material.SetFloat("_GrayscaleAmount", 0f);
-            Destroy(this.gameObject);
+            ColorRestore();
         }
+    }
+
+    private void ColorRestore()
+    {
+        tilemap.material.SetFloat("_GrayscaleAmount", 0f);
+        Destroy(this.gameObject);
     }
 }
