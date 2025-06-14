@@ -3575,6 +3575,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d53af36df7b844398d571963940673, type: 3}
+--- !u!114 &324509555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2057697624777172429, guid: f6d53af36df7b844398d571963940673, type: 3}
+  m_PrefabInstance: {fileID: 324509554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1577af6d1490dff4bb7ef24f84e43785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &325687728 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2800842962161287246, guid: a50e9958f98b63342911307cdab4893b, type: 3}
@@ -4008,6 +4019,30 @@ PrefabInstance:
     - target: {fileID: 7577498761833903864, guid: 3a7854d3535ab6143bc7fbd32bb49720, type: 3}
       propertyPath: m_Name
       value: CameraBound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668989943516223717, guid: 3a7854d3535ab6143bc7fbd32bb49720, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -23.544144
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668989943516223717, guid: 3a7854d3535ab6143bc7fbd32bb49720, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: 11.978609
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668989943516223717, guid: 3a7854d3535ab6143bc7fbd32bb49720, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: -23.813543
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668989943516223717, guid: 3a7854d3535ab6143bc7fbd32bb49720, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -36.666283
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668989943516223717, guid: 3a7854d3535ab6143bc7fbd32bb49720, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: 36.114307
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668989943516223717, guid: 3a7854d3535ab6143bc7fbd32bb49720, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: -36.690598
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6424,7 +6459,7 @@ PrefabInstance:
     - target: {fileID: 6727315703524390361, guid: ce198bdbadf0ee74a8a03efb3c9d67e0, type: 3}
       propertyPath: keyFollower
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 324509555}
     - target: {fileID: 7546512132058215185, guid: ce198bdbadf0ee74a8a03efb3c9d67e0, type: 3}
       propertyPath: playerMovement
       value: 
