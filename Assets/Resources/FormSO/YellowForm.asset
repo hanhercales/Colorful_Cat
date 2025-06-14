@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: YellowForm
   m_EditorClassIdentifier: 
   name: YellowForm
-  originalName: 
+  originalName: YellowForm
   formIcon: {fileID: 1277665261, guid: c6924645083674a438657364ba427ad4, type: 3}
   animatorController: {fileID: 9100000, guid: 7410b611ef227fe4d904d02044f4b75e, type: 2}
   activationKey: 51
   bulletSprite: {fileID: 250178585, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}
-  originalBulletSprite: {fileID: 0}
+  originalBulletSprite: {fileID: 250178585, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}

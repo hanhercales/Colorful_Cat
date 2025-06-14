@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4333773819754908469}
   - component: {fileID: 5193751734735059812}
   - component: {fileID: 8722594009611728318}
-  - component: {fileID: 4743038467385557918}
   - component: {fileID: 2494195597807378118}
+  - component: {fileID: -8029114286038003849}
   m_Layer: 0
   m_Name: Ghost Boss
   m_TagString: Enemy
@@ -29,13 +29,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509498466760981208}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 7.55, y: 13.36, z: 0.14898281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 732674155434190274}
+  - {fileID: 1429791865067404845}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!50 &4333773819754908469
 Rigidbody2D:
   serializedVersion: 4
@@ -150,27 +152,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4743038467385557918
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509498466760981208}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd5361c8e9c46b44d89debb12d28cd5f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2494195597807378118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +167,119 @@ MonoBehaviour:
   maxHealth: 2
   flashDuration: 0.1
   weaknessName: PurpleForm
+--- !u!114 &-8029114286038003849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509498466760981208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8049bfafad0f57746998045ed1a3f18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  damageAmount: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  wallCheck: {fileID: 732674155434190274}
+  groundCheck: {fileID: 1429791865067404845}
+  groundCheckRadius: 0.2
+  wallCheckDistance: 0.2
+  formsList:
+  - weaknessName: BlankForm
+    bossSprite: {fileID: -1361400271, guid: 9cc468332d3b1ac489d9194bacfb749c, type: 3}
+  - weaknessName: RedForm
+    bossSprite: {fileID: -1526627563, guid: 9cc468332d3b1ac489d9194bacfb749c, type: 3}
+  - weaknessName: OrangeForm
+    bossSprite: {fileID: -484112255, guid: 9cc468332d3b1ac489d9194bacfb749c, type: 3}
+  - weaknessName: YellowForm
+    bossSprite: {fileID: 470429213, guid: 9cc468332d3b1ac489d9194bacfb749c, type: 3}
+  - weaknessName: GreenForm
+    bossSprite: {fileID: 1832878336, guid: 9cc468332d3b1ac489d9194bacfb749c, type: 3}
+  - weaknessName: BlueForm
+    bossSprite: {fileID: 526039529, guid: 9cc468332d3b1ac489d9194bacfb749c, type: 3}
+  - weaknessName: IndigoForm
+    bossSprite: {fileID: -826283180, guid: 9cc468332d3b1ac489d9194bacfb749c, type: 3}
+  - weaknessName: PurpleForm
+    bossSprite: {fileID: 865000654, guid: 9cc468332d3b1ac489d9194bacfb749c, type: 3}
+  currentForm:
+    weaknessName: 
+    bossSprite: {fileID: 0}
+  enemyHealth: {fileID: 2494195597807378118}
+  verticalMoveSpeed: 2
+  playerTransform: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
+  projectilePrefab: {fileID: 5250723795900045811, guid: 15ad16c1255a31f4085aae31be8870bd, type: 3}
+  projectileSpeed: 10
+  projectileBarrageHeight: 10
+  numberOfShots: 2
+  shotDelay: 0.3
+  chargeSpeed: 15
+  chargeDuration: 1
+  timeBetweenAttacks: 3
+  attackWindupTime: 0.5
+--- !u!1 &3294451561448812007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732674155434190274}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &732674155434190274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294451561448812007}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -2.468, y: -0.33, z: -0.14898281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3964025107517723466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6802190744535350863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429791865067404845}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1429791865067404845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6802190744535350863}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.11, y: -2.93, z: -0.14898281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3964025107517723466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
