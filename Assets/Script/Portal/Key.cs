@@ -6,6 +6,7 @@ public class Key : MonoBehaviour
     private Transform playerTransform;
     private bool isFollowingPlayer = false;
     private Vector3 initialPosition;
+    [SerializeField] private Vector3 originalPosition;
 
     [Header("Idle Floating (Before Pickup)")]
     [Tooltip("How fast the key bobs up and down when idle.")]
@@ -21,7 +22,7 @@ public class Key : MonoBehaviour
 
     void Start()
     {
-        initialPosition = transform.position;
+        initialPosition = originalPosition = transform.position;
     }
 
     void Update()
@@ -56,6 +57,8 @@ public class Key : MonoBehaviour
         transform.position = targetPosition;
     }
     
+    public Vector3 GetOriginalPosition() => originalPosition;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isFollowingPlayer || !other.CompareTag("Player"))
@@ -76,5 +79,32 @@ public class Key : MonoBehaviour
         }
         
         GetComponent<Collider2D>().enabled = false;
+    }
+    
+    public void DropKey()
+    {
+        if (!isFollowingPlayer)
+        {
+            Debug.LogWarning("DropKey() called but key is not currently following the player.", this);
+            return;
+        }
+
+        isFollowingPlayer = false;
+        playerTransform = null;
+
+        transform.position = originalPosition;
+        initialPosition = originalPosition; 
+
+        GetComponent<Collider2D>().enabled = true;
+        
+        GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerGameObject != null)
+        {
+            PlayerMovement playerMovement = playerGameObject.GetComponent<PlayerMovement>();
+            if (playerMovement != null && playerMovement.keyFollower == this)
+            {
+                playerMovement.keyFollower = null;
+            }
+        }
     }
 }

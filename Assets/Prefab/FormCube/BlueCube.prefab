@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 484253602134321153}
   - component: {fileID: 812305804417351365}
   - component: {fileID: 929321777928460230}
+  - component: {fileID: 3270425337095799468}
   m_Layer: 0
   m_Name: BlueCube
   m_TagString: ColorCube
@@ -151,3 +152,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   enemies: {fileID: 0}
+--- !u!114 &3270425337095799468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502234085779736420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1577af6d1490dff4bb7ef24f84e43785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleFloatSpeed: 1.5
+  idleFloatStrength: 0.25
+  horizontalOffset: -0.7
+  verticalOffset: 0.4
+  followFloatSpeed: 2
+  followFloatStrength: 0.2

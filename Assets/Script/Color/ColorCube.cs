@@ -10,11 +10,14 @@ public class ColorCube : MonoBehaviour
 
     private void Start()
     {
+        enemies.SetActive(false);
+        
         foreach (Form _form in formManager.formList)
         {
             if (_form.name == form.name)
             {
                 ColorRestore();
+                Destroy(this.gameObject);
                 break;
             }
             else
@@ -44,6 +47,5 @@ public class ColorCube : MonoBehaviour
         {
             tilemap.material.SetFloat("_GrayscaleAmount", 0f);
         }
-        Destroy(this.gameObject);
     }
 }

@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    
+    [SerializeField] private GameObject enemies;
 
     private void Awake()
     {
@@ -14,7 +17,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    
+
     public void LoadScene(string sceneName)
     {
         if (string.IsNullOrEmpty(sceneName))

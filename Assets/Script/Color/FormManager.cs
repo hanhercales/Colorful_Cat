@@ -81,7 +81,7 @@ public class FormManager : MonoBehaviour
         Debug.Log(PlayerPrefs.GetString(collectedForms));
     }
 
-    private void LoadForms()
+    public void LoadForms()
     {
         formList.Clear();
 
@@ -101,6 +101,8 @@ public class FormManager : MonoBehaviour
                 }
             }
         }
+        
+        formsIconsDisplay.UpdateDisplayedForms();
     }
 
     private void SetToDefault()
