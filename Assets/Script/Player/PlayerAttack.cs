@@ -4,7 +4,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject[] projectiles;
+    
     public FormManager formManager;
     
     private PlayerMovement playerMovement;
@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
         int bulletIndex = FindBullet();
     
         // 2. Get a reference to that specific bullet GameObject.
-        GameObject bullet = projectiles[bulletIndex];
+        GameObject bullet = formManager.projectiles[bulletIndex];
 
         // 3. Set its position and fire it.
         bullet.transform.position = firePoint.position;
@@ -40,9 +40,9 @@ public class PlayerAttack : MonoBehaviour
 
     private int FindBullet()
     {
-        for (int i = 0; i < projectiles.Length; i++)
+        for (int i = 0; i < formManager.projectiles.Length; i++)
         {
-            if (!projectiles[i].activeInHierarchy)
+            if (!formManager.projectiles[i].activeInHierarchy)
             {
                 return i;
             }

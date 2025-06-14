@@ -11,7 +11,7 @@ public class FormManager : MonoBehaviour
     {
         public List<string> formName = new List<string>();
     }
-    
+
     public List<Form> formList = new List<Form>();
     public Animator targetAnimator;
     public string collectedForms = "CollectedForms";
@@ -22,7 +22,7 @@ public class FormManager : MonoBehaviour
     [SerializeField] private GameObject[] formDisplaySlot;
     [SerializeField] private string formResourcesPath = "FormSO";
     [SerializeField] private Form defaultForm;
-    
+
     private Dictionary<string, Form> _formsDict = new Dictionary<string, Form>();
 
     private void Awake()
@@ -34,12 +34,12 @@ public class FormManager : MonoBehaviour
 
     private void Start()
     {
-        if(!PlayerPrefs.HasKey(collectedForms))
+        if (!PlayerPrefs.HasKey(collectedForms))
         {
             Debug.Log("Not found any save");
             InitNewFormList();
         }
-        
+
         ChangeForm(0);
     }
 
@@ -60,7 +60,7 @@ public class FormManager : MonoBehaviour
     {
         targetAnimator.runtimeAnimatorController = formList[formIndex].animatorController;
         currentForm = formList[formIndex];
-        
+
         for (int i = 0; i < projectiles.Length; i++)
         {
             projectiles[i].GetComponent<SpriteRenderer>().sprite = formList[formIndex].bulletSprite;
@@ -70,20 +70,20 @@ public class FormManager : MonoBehaviour
     public void SaveForms()
     {
         FormData data = new FormData();
-        
+
         data.formName = formList.Select(form => form.name).ToList();
         Debug.Log(data.formName);
-        
+
         string json = JsonUtility.ToJson(data);
         PlayerPrefs.SetString(collectedForms, json);
         PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString(collectedForms));
     }
 
-    public void LoadForms()
+    private void LoadForms()
     {
         formList.Clear();
-        
+
         if (PlayerPrefs.HasKey(collectedForms))
         {
             string json = PlayerPrefs.GetString(collectedForms);
@@ -105,32 +105,19 @@ public class FormManager : MonoBehaviour
     private void LoadAllAvailableFormsFromResources()
     {
         _formsDict.Clear();
-        
+
         Form[] forms = Resources.LoadAll<Form>(formResourcesPath);
-        
-        if(forms.Length == 0) return;
+
+        if (forms.Length == 0) return;
 
         foreach (Form form in forms)
         {
-            if(form == null) continue;
+            if (form == null) continue;
 
             if (!_formsDict.ContainsKey(form.name))
             {
                 _formsDict.Add(form.name, form);
             }
         }
-    }
-    
-    public void ResetForms()
-    {
-        PlayerPrefs.DeleteKey(collectedForms);
-        PlayerPrefs.Save();
-        InitNewFormList();
-        Debug.Log("All collected forms data reset.");
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveForms();
     }
 }

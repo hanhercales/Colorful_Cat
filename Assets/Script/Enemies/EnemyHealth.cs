@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
     // A reference to the enemy's sprite renderer and its material.
     private SpriteRenderer spriteRenderer;
     private Material material;
+    
+    public string weaknessName;
 
     private void Awake()
     {

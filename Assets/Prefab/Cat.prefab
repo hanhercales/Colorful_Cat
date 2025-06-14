@@ -205,7 +205,7 @@ MonoBehaviour:
     m_Bits: 64
   animator: {fileID: 1295979591416706275}
   keyFollower: {fileID: 0}
-  formManager: {fileID: 0}
+  playerAttack: {fileID: 4773067509115356287}
 --- !u!114 &4773067509115356287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +231,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  formManager: {fileID: 0}
 --- !u!114 &7546512132058215185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  invincibilityDuration: 1
+  invincibilityFlashDelay: 0.15
 --- !u!1 &8512496352951031131
 GameObject:
   m_ObjectHideFlags: 0

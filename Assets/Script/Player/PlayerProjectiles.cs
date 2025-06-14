@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerProjectiles : MonoBehaviour
@@ -10,10 +11,16 @@ public class PlayerProjectiles : MonoBehaviour
     private float lifetime;
 
     private BoxCollider2D boxCollider;
+    private PlayerMovement player;
 
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+    }
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -34,7 +41,11 @@ public class PlayerProjectiles : MonoBehaviour
             boxCollider.enabled = false;
             if (collision.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth))
             {
-                enemyHealth.TakeDamage(damage);
+                if(enemyHealth.weaknessName == player.playerAttack.formManager.currentForm.name ||
+                   player.playerAttack.formManager.currentForm.name == "RainbowForm")
+                    enemyHealth.TakeDamage(damage);
+                else if(enemyHealth.weaknessName == "BlankForm" && EasterEggUnlocked())
+                    enemyHealth.TakeDamage(damage * 2);
             }
             Deactivate();
         }
@@ -55,6 +66,16 @@ public class PlayerProjectiles : MonoBehaviour
         }
         
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+    }
+
+    private bool EasterEggUnlocked()
+    {
+        foreach (Form form in player.playerAttack.formManager.formList)
+        {
+            if (form.name == "RainbowForm")
+                return true;
+        }
+        return false;
     }
 
     private void Deactivate()
