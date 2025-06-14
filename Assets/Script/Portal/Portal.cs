@@ -10,6 +10,9 @@ public class Portal : MonoBehaviour
 
     private void Start()
     {
+        if(formManager.formList.Count == 8)
+            this.gameObject.SetActive(true);
+        
         foreach (Form form in formManager.formList)
         {
             if(form.originalName == formName)
@@ -30,5 +33,11 @@ public class Portal : MonoBehaviour
             formManager.SaveForms();
             GameManager.Instance.LoadScene(sceneName);
         }
+    }
+
+    public void ChangeScene()
+    {
+        Debug.Log(sceneName);
+        GameManager.Instance.LoadScene(sceneName);
     }
 }
