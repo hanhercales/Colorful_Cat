@@ -106,5 +106,8 @@ public class Key : MonoBehaviour
                 playerMovement.keyFollower = null;
             }
         }
+        
+        GetComponent<ColorCube>().enemies.SetActive(false);
+        GetComponent<ColorCube>().DisColor();
     }
 }
