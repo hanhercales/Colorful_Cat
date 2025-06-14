@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Ground
   - ColorCube
+  - "\u01AFater"
+  - Water
   layers:
   - Default
   - TransparentFX

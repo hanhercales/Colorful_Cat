@@ -13,5 +13,8 @@ EditorBuildSettings:
     guid: 8c20b9193c096434d8982ad03d80c6af
   - enabled: 1
     path: Assets/Scenes/Yellow.unity
-    guid: a2e8ee795489f594aa61e3fb6ab82746
+    guid: 703cec81c68833644943ba2a53de1a7a
+  - enabled: 1
+    path: Assets/Scenes/Green.unity
+    guid: 767ea4860e676974eaf3f501f1c310fd
   m_configObjects: {}
