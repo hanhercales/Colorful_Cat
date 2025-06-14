@@ -2422,7 +2422,10 @@ MonoBehaviour:
 
     J for firing
 
-    0 to 7 for changing form'
+    0 to 7 for changing form
+
+    R
+    A I N B O W 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -3665,7 +3668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1702157148
 RectTransform:
   m_ObjectHideFlags: 0
