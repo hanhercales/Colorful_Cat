@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8920678438255267374}
   - component: {fileID: 8292643537279122865}
   - component: {fileID: 9171720091960332141}
-  - component: {fileID: 5068025136094865833}
   m_Layer: 0
   m_Name: PurpleCube
   m_TagString: ColorCube
@@ -146,25 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   form: {fileID: 11400000, guid: a422bf169e33836449b69dd65f524da9, type: 2}
   formManager: {fileID: 0}
-  tilemap: {fileID: 0}
---- !u!95 &5068025136094865833
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6822466194722881936}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90653f5541faf934fb850bb102d945dc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  tilemaps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemies: {fileID: 0}

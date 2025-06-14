@@ -2,56 +2,92 @@ Shader "Custom/GrayscaleShader"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
-        _GrayscaleAmount ("Grayscale Amount", Range(0,1)) = 1 // 0 = full color, 1 = grayscale
+        [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
+        _Color ("Tint", Color) = (1,1,1,1)
+        [MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
+        [HideInInspector] _RendererColor ("RendererColor", Color) = (1,1,1,1)
+        [HideInInspector] _Flip ("Flip", Vector) = (1.000000,1.000000,1.000000,1.000000)
+        [PerRendererData] _AlphaTex ("External Alpha", 2D) = "white" {}
+        [PerRendererData] _EnableExternalAlpha ("Enable External Alpha", Float) = 0
+
+        // === THÊM PROPERTY GRAYSCALE ===
+        _GrayscaleAmount ("Grayscale Amount", Range(0,1)) = 0 // 0 = full color, 1 = grayscale
     }
+
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags
+        {
+            "Queue"="Transparent"
+            "IgnoreProjector"="True"
+            "RenderType"="Transparent"
+            "PreviewType"="Sprite"
+            "CanUseSpriteAtlas"="True"
+        }
+
+        Cull Off
+        Lighting Off
+        ZWrite Off
+        Blend One OneMinusSrcAlpha
 
         Pass
         {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma target 2.0
+            #pragma multi_compile _ PIXELSNAP_ON
+            #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
+
             #include "UnityCG.cginc"
+            #include "UnitySprites.cginc"
 
-            struct appdata
+            // Removed redundant appdata_t and v2f structs as UnitySprites.cginc defines them.
+            // Removed redundant _MainTex, _Color, _AlphaTex, _EnableExternalAlpha declarations
+            // as UnityCG.cginc/UnitySprites.cginc likely defines them for this context.
+
+            // --- CHỈ THÊM BIẾN GRAYSCALE ---
+            float _GrayscaleAmount; // This is the only new uniform variable we need to declare.
+
+
+            v2f vert(appdata_t IN)
             {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
+                v2f OUT;
+                UNITY_SETUP_INSTANCE_ID(IN);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
 
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
-            };
+                OUT.vertex = UnityObjectToClipPos(IN.vertex);
+                OUT.texcoord = IN.texcoord;
+                // _Color is defined by UnitySprites.cginc for the sprite context.
+                OUT.color = IN.color * _Color; 
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-            float _GrayscaleAmount;
+                #ifdef PIXELSNAP_ON
+                OUT.vertex = UnityPixelSnap (OUT.vertex);
+                #endif
 
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                return o;
+                return OUT;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f IN) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
+                // _MainTex is defined by UnityCG.cginc/UnitySprites.cginc.
+                fixed4 c = tex2D (_MainTex, IN.texcoord);
 
-                // Calculate grayscale luminance (common formula)
-                float grayscale = dot(col.rgb, float3(0.299, 0.587, 0.114));
+                #if ETC1_EXTERNAL_ALPHA
+                // _AlphaTex and _EnableExternalAlpha are also defined by Unity's includes for this context.
+                fixed4 alpha = tex2D (_AlphaTex, IN.texcoord);
+                c.a = lerp (c.a, alpha.r, _EnableExternalAlpha);
+                #endif
 
-                // Lerp between original color and grayscale
-                col.rgb = lerp(col.rgb, grayscale.xxx, _GrayscaleAmount);
+                c.rgb *= c.a;
+                c *= IN.color;
 
-                return col;
+                // ============== THÊM LOGIC GRAYSCALE TẠI ĐÂY ==============
+                float grayscale = dot(c.rgb, float3(0.299, 0.587, 0.114));
+                c.rgb = lerp(c.rgb, grayscale.xxx, _GrayscaleAmount);
+                // ==========================================================
+
+                return c;
             }
             ENDCG
         }

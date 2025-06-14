@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1872993135049633635}
   - component: {fileID: 3104488569850464019}
   - component: {fileID: 508435332369461064}
-  - component: {fileID: 2906665276122528875}
   m_Layer: 0
   m_Name: GreenCube
   m_TagString: ColorCube
@@ -146,25 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   form: {fileID: 11400000, guid: d5c93c888c2b2f345847efb243131b2c, type: 2}
   formManager: {fileID: 0}
-  tilemap: {fileID: 0}
---- !u!95 &2906665276122528875
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428120105026932726}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 02fd407b7bb1acf4f869012547c9c257, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  tilemaps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemies: {fileID: 0}

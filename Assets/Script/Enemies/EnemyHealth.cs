@@ -17,6 +17,8 @@ public class EnemyHealth : MonoBehaviour
     public string weaknessName;
     
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurtSound;
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -25,12 +27,16 @@ public class EnemyHealth : MonoBehaviour
         // Get the renderer and create a unique material instance for it.
         spriteRenderer = GetComponent<SpriteRenderer>();
         material = spriteRenderer.material;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damageAmount)
     {
+        audioSource.PlayOneShot(hurtSound);
+        
         currentHealth -= damageAmount;
         Debug.Log($"Enemy took {damageAmount} damage. Health is now {currentHealth}");
+        
 
         // --- Trigger the flash effect ---
         StartCoroutine(FlashEffect());
@@ -56,7 +62,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        GetComponent<AudioSource>().PlayOneShot(deathSound);
+        audioSource.PlayOneShot(deathSound);
         Destroy(gameObject, deathSound.length);
     }
 }   

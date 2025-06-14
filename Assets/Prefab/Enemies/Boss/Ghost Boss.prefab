@@ -169,6 +169,7 @@ MonoBehaviour:
   flashDuration: 0.1
   weaknessName: PurpleForm
   deathSound: {fileID: 8300000, guid: 4946c52ad930716499a57c8d1cb9d4b7, type: 3}
+  hurtSound: {fileID: 8300000, guid: 0c3295a92de18914aaf210d05f874999, type: 3}
 --- !u!114 &-8029114286038003849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +239,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
