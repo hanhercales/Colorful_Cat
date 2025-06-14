@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5106129157512940973}
   - component: {fileID: 409247682339422308}
   - component: {fileID: 7524305085788107929}
+  - component: {fileID: 7475562968371374694}
   m_Layer: 0
   m_Name: YellowCube
   m_TagString: ColorCube
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1277665261, guid: c6924645083674a438657364ba427ad4, type: 3}
+  m_Sprite: {fileID: -2106583182, guid: 0b2c7843a73cade4ba5b24bcf6648ba4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,3 +147,24 @@ MonoBehaviour:
   form: {fileID: 11400000, guid: a9fe3f3f8c660de48a9ae5261416d2ef, type: 2}
   formManager: {fileID: 0}
   tilemap: {fileID: 0}
+--- !u!95 &7475562968371374694
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521718443519554142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f014e2b14f6038488fe15ec824c8d2e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

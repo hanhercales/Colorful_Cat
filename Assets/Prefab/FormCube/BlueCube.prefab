@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 484253602134321153}
   - component: {fileID: 812305804417351365}
   - component: {fileID: 929321777928460230}
+  - component: {fileID: 1378935522806656758}
   m_Layer: 0
   m_Name: BlueCube
   m_TagString: ColorCube
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 413527886, guid: c6924645083674a438657364ba427ad4, type: 3}
+  m_Sprite: {fileID: 1757284474, guid: 0b2c7843a73cade4ba5b24bcf6648ba4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,3 +147,24 @@ MonoBehaviour:
   form: {fileID: 11400000, guid: d5b2161741a5b5644a91a7a54147888d, type: 2}
   formManager: {fileID: 0}
   tilemap: {fileID: 0}
+--- !u!95 &1378935522806656758
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4502234085779736420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fb1e23994593cf428c4eb7d3e453c7b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
