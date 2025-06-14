@@ -98,9 +98,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.018966198}
+  m_Offset: {x: 0, y: 0.010269642}
   serializedVersion: 2
-  m_Radius: 2.6
+  m_Radius: 1.7912259
 --- !u!212 &8722594009611728318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 0}
   projectilePrefab: {fileID: 5250723795900045811, guid: 15ad16c1255a31f4085aae31be8870bd, type: 3}
   projectileSpeed: 10
-  projectileBarrageHeight: 10
+  projectileBarrageHeight: 8
   numberOfShots: 2
   shotDelay: 0.3
   chargeSpeed: 15
@@ -348,7 +348,7 @@ Transform:
   m_GameObject: {fileID: 3294451561448812007}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -2.468, y: -0.33, z: -0.14898281}
+  m_LocalPosition: {x: -1.67, y: -0.23, z: -0.14898281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -379,7 +379,7 @@ Transform:
   m_GameObject: {fileID: 6802190744535350863}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.11, y: -2.93, z: -0.14898281}
+  m_LocalPosition: {x: 0.11, y: -1.82, z: -0.14898281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

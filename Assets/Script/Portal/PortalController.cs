@@ -25,8 +25,6 @@ public class PortalController : MonoBehaviour
         GameObject keyObject = GameObject.FindWithTag("ColorCube");
         if (keyObject != null) {
             keyTransform = keyObject.transform;
-        } else {
-            Debug.LogError("Portal couldn't find an object with the 'Key' tag.");
         }
         
         portalCollider.enabled = false;

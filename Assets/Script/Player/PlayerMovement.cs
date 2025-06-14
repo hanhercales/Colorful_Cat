@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontalInput;
     private bool isGrounded;
-    private bool isFacingRight = true; 
+    private bool isFacingRight = true;
     
     public float moveSpeed = 8f;
     public float jumpForce = 16f;
