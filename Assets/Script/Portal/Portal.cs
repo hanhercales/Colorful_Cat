@@ -1,11 +1,22 @@
+using System;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
 { 
     public string sceneName;
+    public string formName;
     
     [SerializeField] private FormManager formManager;
-    
+
+    private void Start()
+    {
+        foreach (Form form in formManager.formList)
+        {
+            if(form.originalName == formName)
+                this.gameObject.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
