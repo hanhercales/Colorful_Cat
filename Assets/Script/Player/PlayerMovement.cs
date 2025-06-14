@@ -18,10 +18,14 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Key keyFollower;
     public PlayerAttack playerAttack;
+    
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioSource audioSource;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -36,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // We set the velocity directly. The actual movement happens in FixedUpdate.
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            audioSource.PlayOneShot(jumpSound);
         }
         
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)

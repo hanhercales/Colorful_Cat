@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 respawnPoint;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    
+    [SerializeField] private AudioClip hurtSound;
 
     public static event Action OnHealthChanged;
 
@@ -39,6 +41,8 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
+        GetComponent<AudioSource>().PlayOneShot(hurtSound);
+        
         currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
         OnHealthChanged?.Invoke();
         

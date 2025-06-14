@@ -39,14 +39,23 @@ public class BossController : NormalEnemy
     private Vector2 chargeDirection;
     
     private Vector3 initialBossPosition;
+    
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private AudioClip chargeSound;
+    [SerializeField] private AudioClip idleSound;
+    private AudioSource bossAudioSource;
 
     protected override void Awake()
     {
         base.Awake();
         
+        bossAudioSource = GetComponent<AudioSource>();
+        
         initialBossPosition = transform.position;
         
         ChangeForm();
+        
+        PlayIdleSound();
     }
 
     protected override void FixedUpdate()
@@ -121,10 +130,23 @@ public class BossController : NormalEnemy
     {
         canAttack = false;
         rb.velocity = Vector2.zero;
+        
+        StopIdleSound();
 
         yield return new WaitForSeconds(attackWindupTime);
 
         int attackChoice = UnityEngine.Random.Range(0, 2);
+        
+        if (attackChoice == 0)
+        {
+            PlayShootSound(); // Phát âm thanh bắn
+            yield return StartCoroutine(ProjectileBarrageAttack());
+        }
+        else
+        {
+            PlayChargeSound(); // Phát âm thanh lao
+            yield return StartCoroutine(ChargeAttack());
+        }
 
         if (attackChoice == 0)
         {
@@ -138,6 +160,8 @@ public class BossController : NormalEnemy
         yield return new WaitForSeconds(timeBetweenAttacks - attackWindupTime); 
 
         ChangeForm();
+        
+        PlayIdleSound();
 
         canAttack = true;
     }
@@ -190,7 +214,7 @@ public class BossController : NormalEnemy
 
     void ChangeForm()
     {
-        int currentFormIndex = UnityEngine.Random.Range(0, formsList.Count - 1);
+        int currentFormIndex = UnityEngine.Random.Range(0, formsList.Count);
         
         if (formsList == null || formsList.Count == 0) return;
 
@@ -198,6 +222,39 @@ public class BossController : NormalEnemy
 
         GetComponent<SpriteRenderer>().sprite = currentForm.bossSprite;
         enemyHealth.weaknessName = currentForm.weaknessName;
+    }
+    
+    private void PlayShootSound()
+    {
+        if (bossAudioSource != null && shootSound != null)
+        {
+            bossAudioSource.PlayOneShot(shootSound);
+        }
+    }
+
+    private void PlayChargeSound()
+    {
+        if (bossAudioSource != null && chargeSound != null)
+        {
+            bossAudioSource.PlayOneShot(chargeSound);
+        }
+    }
+
+    private void PlayIdleSound()
+    {
+        if (bossAudioSource != null && idleSound != null)
+        {
+            bossAudioSource.clip = idleSound;
+            bossAudioSource.Play();
+        }
+    }
+
+    private void StopIdleSound()
+    {
+        if (bossAudioSource != null && bossAudioSource.loop && bossAudioSource.isPlaying)
+        {
+            bossAudioSource.Stop();
+        }
     }
 
     void OnDisable()

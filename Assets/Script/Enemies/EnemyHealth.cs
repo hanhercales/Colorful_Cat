@@ -15,6 +15,8 @@ public class EnemyHealth : MonoBehaviour
     private Material material;
     
     public string weaknessName;
+    
+    [SerializeField] private AudioClip deathSound;
 
     private void Awake()
     {
@@ -54,6 +56,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        GetComponent<AudioSource>().PlayOneShot(deathSound);
+        Destroy(gameObject, deathSound.length);
     }
 }   

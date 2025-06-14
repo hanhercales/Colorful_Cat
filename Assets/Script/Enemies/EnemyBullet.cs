@@ -14,8 +14,8 @@ public class EnemyBullet : MonoBehaviour
             if (other.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
             {
                 playerHealth.TakeDamage(damage);
-                Destroy(gameObject);
             }
+            Destroy(gameObject);
         }
     }
 }
