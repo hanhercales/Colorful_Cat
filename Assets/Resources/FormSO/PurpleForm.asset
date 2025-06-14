@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: PurpleForm
   m_EditorClassIdentifier: 
   name: PurpleForm
+  originalName: PurpleForm
   formIcon: {fileID: 388027496, guid: c6924645083674a438657364ba427ad4, type: 3}
   animatorController: {fileID: 9100000, guid: e2641eb345381b5489f7d038e665afbc, type: 2}
   activationKey: 55
   bulletSprite: {fileID: -356242474, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}
+  originalBulletSprite: {fileID: -356242474, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}

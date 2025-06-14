@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: BlankForm
   m_EditorClassIdentifier: 
   name: BlankForm
+  originalName: BlankForm
   formIcon: {fileID: 149669437, guid: c6924645083674a438657364ba427ad4, type: 3}
   animatorController: {fileID: 9100000, guid: 5bc55a36e54bb5b4bba3fdeeb3cc1cc3, type: 2}
   activationKey: 48
   bulletSprite: {fileID: -216381396, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}
+  originalBulletSprite: {fileID: -216381396, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}

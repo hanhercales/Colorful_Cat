@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3248755791341608110}
   - component: {fileID: 2550641251914291597}
   - component: {fileID: 7775955241204847208}
-  - component: {fileID: 4415567971961689055}
   m_Layer: 0
   m_Name: RedCube
   m_TagString: ColorCube
@@ -146,25 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   form: {fileID: 11400000, guid: f8f6f8af4462cf34e86a798a6c9869d7, type: 2}
   formManager: {fileID: 0}
-  tilemap: {fileID: 0}
---- !u!95 &4415567971961689055
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051063940285839270}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8e9d00ecec7a52c4ab89cb219e03a99c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  tilemaps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemies: {fileID: 0}

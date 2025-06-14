@@ -4,6 +4,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private AudioClip shootingSound;
     
     public FormManager formManager;
     
@@ -32,6 +33,8 @@ public class PlayerAttack : MonoBehaviour
     
         // 2. Get a reference to that specific bullet GameObject.
         GameObject bullet = formManager.projectiles[bulletIndex];
+        
+        GetComponent<AudioSource>().PlayOneShot(shootingSound);
 
         // 3. Set its position and fire it.
         bullet.transform.position = firePoint.position;

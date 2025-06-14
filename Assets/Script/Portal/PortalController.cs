@@ -22,7 +22,7 @@ public class PortalController : MonoBehaviour
 
     void Start()
     {
-        GameObject keyObject = GameObject.FindWithTag("Key");
+        GameObject keyObject = GameObject.FindWithTag("ColorCube");
         if (keyObject != null) {
             keyTransform = keyObject.transform;
         } else {

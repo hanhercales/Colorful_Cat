@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: BlueForm
   m_EditorClassIdentifier: 
   name: BlueForm
+  originalName: BlueForm
   formIcon: {fileID: 413527886, guid: c6924645083674a438657364ba427ad4, type: 3}
   animatorController: {fileID: 9100000, guid: 393e7611037338a4882324c91ed2dca1, type: 2}
   activationKey: 53
-  bulletSprite: {fileID: -1764813225, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}
+  bulletSprite: {fileID: 73277740, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}
+  originalBulletSprite: {fileID: 73277740, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}

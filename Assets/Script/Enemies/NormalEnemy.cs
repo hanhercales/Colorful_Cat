@@ -2,26 +2,26 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class NormalEnemy : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 2f;
-    private bool isFacingRight = true;
+    [SerializeField] protected float moveSpeed = 2f;
+    protected bool isFacingRight = true;
     
-    [SerializeField] private int damageAmount = 1;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] protected int damageAmount = 1;
+    [SerializeField] protected LayerMask groundLayer;
 
-    [SerializeField] private Transform wallCheck;
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] protected Transform wallCheck;
+    [SerializeField] protected Transform groundCheck;
     
-    [SerializeField] private float groundCheckRadius = 0.2f;
-    [SerializeField] private float wallCheckDistance = 0.2f;
+    [SerializeField] protected float groundCheckRadius = 0.2f;
+    [SerializeField] protected float wallCheckDistance = 0.2f;
     
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         float horizontalVelocity = isFacingRight ? moveSpeed : -moveSpeed;
         rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
@@ -29,7 +29,7 @@ public class NormalEnemy : MonoBehaviour
         CheckForTurn();
     }
 
-    private void CheckForTurn()
+    protected virtual void CheckForTurn()
     {
         bool wallDetected = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, groundLayer);
         bool groundDetected = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -40,7 +40,7 @@ public class NormalEnemy : MonoBehaviour
         }
     }
 
-    private void Flip()
+    protected virtual void Flip()
     {
         isFacingRight = !isFacingRight;
         
@@ -49,7 +49,7 @@ public class NormalEnemy : MonoBehaviour
         transform.localScale = localScale;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
         {
@@ -57,7 +57,7 @@ public class NormalEnemy : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
         // Wall Check line
         Gizmos.color = Color.red;

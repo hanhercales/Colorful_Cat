@@ -6,8 +6,10 @@ using UnityEngine;
 public class Form : ScriptableObject
 {
     public new string name;
+    public string originalName;
     public Sprite formIcon;
     public RuntimeAnimatorController animatorController;
     public KeyCode activationKey;
     public Sprite bulletSprite;
+    public Sprite originalBulletSprite;
 }
