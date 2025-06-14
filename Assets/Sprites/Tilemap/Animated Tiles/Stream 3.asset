@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: Stream 3
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
+  m_AnimatedSprites:
+  - {fileID: -1370252416, guid: d0607c16aa6e4294bb51f4a97e2a5a53, type: 3}
+  - {fileID: 1229879395, guid: d0607c16aa6e4294bb51f4a97e2a5a53, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
