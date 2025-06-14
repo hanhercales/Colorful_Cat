@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   flashDuration: 0.1
-  weaknessName: OrangeForm
+  weaknessName: YellowForm
 --- !u!114 &4279038779428822168
 MonoBehaviour:
   m_ObjectHideFlags: 0

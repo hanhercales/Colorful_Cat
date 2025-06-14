@@ -281,4 +281,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   flashDuration: 0.1
-  weaknessName: 
+  weaknessName: RedForm

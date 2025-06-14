@@ -43,11 +43,12 @@ public class FormManager : MonoBehaviour
         ChangeForm(0);
     }
 
-    public void InitNewFormList()
+    private void InitNewFormList()
     {
         formList.Clear();
         AddForm(defaultForm);
         currentForm = defaultForm;
+        SetToDefault();
     }
 
     public void AddForm(Form form)
@@ -99,6 +100,15 @@ public class FormManager : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    private void SetToDefault()
+    {
+        foreach (Form form in formList)
+        {
+            form.name = form.originalName;
+            form.bulletSprite = form.originalBulletSprite;
         }
     }
 
