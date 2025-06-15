@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 396091066}
   - component: {fileID: 396091065}
   - component: {fileID: 396091067}
+  - component: {fileID: 396091068}
   m_Layer: 0
   m_Name: FormManager
   m_TagString: Untagged
@@ -348,6 +349,20 @@ MonoBehaviour:
   formManager: {fileID: 396091065}
   rainbowBulletSprite: {fileID: -1764813225, guid: 2b55cbf0b8e0161419b89745b9175fde, type: 3}
   blankBulletSprite: {fileID: 21300000, guid: bc74bf02c009f8b4c92ce2383220fc91, type: 3}
+--- !u!114 &396091068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396091064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e07d007975f2114882500a1edec13f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  formManager: {fileID: 396091065}
+  portal: {fileID: 1413900955}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3793,6 +3808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2924896453520956912, guid: 32ea0bbb7c3a66d4f85f2d0044c8b3f0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6850393539938328672, guid: 32ea0bbb7c3a66d4f85f2d0044c8b3f0, type: 3}
       propertyPath: formName
       value: Nigga
@@ -3840,7 +3859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a1de61df260ac4299c37951d65faee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: {fileID: 0}
 --- !u!4 &1186843886
 Transform:
   m_ObjectHideFlags: 0
@@ -3967,6 +3985,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2800842962161287246, guid: a50e9958f98b63342911307cdab4893b, type: 3}
   m_PrefabInstance: {fileID: 2950668989527084066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1413900955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1255793961414635593, guid: 32ea0bbb7c3a66d4f85f2d0044c8b3f0, type: 3}
+  m_PrefabInstance: {fileID: 1148658810}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1440723932
 PrefabInstance:

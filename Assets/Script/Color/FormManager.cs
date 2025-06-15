@@ -72,7 +72,7 @@ public class FormManager : MonoBehaviour
     {
         FormData data = new FormData();
 
-        data.formName = formList.Select(form => form.name).ToList();
+        data.formName = formList.Select(form => form.originalName).ToList();
         Debug.Log(data.formName);
 
         string json = JsonUtility.ToJson(data);
@@ -126,9 +126,9 @@ public class FormManager : MonoBehaviour
         {
             if (form == null) continue;
 
-            if (!_formsDict.ContainsKey(form.name))
+            if (!_formsDict.ContainsKey(form.originalName))
             {
-                _formsDict.Add(form.name, form);
+                _formsDict.Add(form.originalName, form);
             }
         }
     }
