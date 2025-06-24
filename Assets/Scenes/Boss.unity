@@ -4166,9 +4166,7 @@ MonoBehaviour:
   targetAnimator: {fileID: 945130741}
   collectedForms: CollectedForms
   currentForm: {fileID: 0}
-  projectiles: []
-  formsIconsDisplay: {fileID: 1662251728}
-  formDisplaySlot:
+  projectiles:
   - {fileID: 132679250}
   - {fileID: 471382825}
   - {fileID: 271624520}
@@ -4179,6 +4177,8 @@ MonoBehaviour:
   - {fileID: 716640931}
   - {fileID: 1295736211}
   - {fileID: 1317318728}
+  formsIconsDisplay: {fileID: 1662251728}
+  formDisplaySlot: []
   formResourcesPath: FormSO
   defaultForm: {fileID: 11400000, guid: 7d7336e2b1111a1438ddd30b4b6dcd06, type: 2}
 --- !u!4 &729741150
