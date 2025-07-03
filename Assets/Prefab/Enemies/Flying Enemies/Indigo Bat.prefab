@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4279038779428822168}
   - component: {fileID: -375391482556015644}
   m_Layer: 0
-  m_Name: Purple Bat
+  m_Name: Indigo Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   flashDuration: 0.1
-  weaknessName: PurpleForm
+  weaknessName: IndigoForm
   deathSound: {fileID: 8300000, guid: c51c6956c4d1e6d42bb57d7f559a14bb, type: 3}
   hurtSound: {fileID: 8300000, guid: f7545d2127002fa4fb0a4f0983297b0d, type: 3}
 --- !u!114 &4279038779428822168

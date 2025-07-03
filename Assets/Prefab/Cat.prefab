@@ -172,7 +172,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.026182935, y: 0.03491065}
+  m_Offset: {x: 0.0058242083, y: 0.03491065}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -183,7 +183,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9476341, y: 0.56943566}
+  m_Size: {x: 0.7509184, y: 0.56943566}
   m_EdgeRadius: 0
 --- !u!114 &6727315703524390361
 MonoBehaviour:
@@ -241,6 +241,7 @@ MonoBehaviour:
   invincibilityDuration: 1
   invincibilityFlashDelay: 0.15
   hurtSound: {fileID: 8300000, guid: 4bba022714c572546b6829c17bb179e8, type: 3}
+  playerMovement: {fileID: 0}
 --- !u!82 &3012640967891458930
 AudioSource:
   m_ObjectHideFlags: 0

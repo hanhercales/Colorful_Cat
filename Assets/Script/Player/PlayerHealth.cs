@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     
     [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private PlayerMovement playerMovement;
 
     public static event Action OnHealthChanged;
 
@@ -29,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     public int GetCurrentHealth() => currentHealth;
@@ -72,6 +74,13 @@ public class PlayerHealth : MonoBehaviour
     {
         transform.position = respawnPoint;
         rb.velocity = Vector2.zero;
+        GetComponent<PlayerAttack>().formManager.LoadForms();
+        if (playerMovement.keyFollower != null)
+        {
+            playerMovement.keyFollower.GetComponent<Key>().DropKey();
+        }
+            
+        
         Debug.Log("Player respawned at start.");
     }
 

@@ -6,24 +6,23 @@ public class ColorCube : MonoBehaviour
     public Form form;
     public FormManager formManager;
     public TilemapRenderer[] tilemaps;
-    [SerializeField] private GameObject enemies;
+    public GameObject enemies;
 
     private void Start()
     {
+        enemies.SetActive(false);
+        
         foreach (Form _form in formManager.formList)
         {
             if (_form.name == form.name)
             {
                 ColorRestore();
+                Destroy(this.gameObject);
                 break;
             }
             else
             {
-                foreach (TilemapRenderer tilemap in tilemaps)
-                {
-                    tilemap.material.SetFloat("_GrayscaleAmount", 1f);
-                }
-                
+                DisColor();
             }
         }
     }
@@ -44,6 +43,13 @@ public class ColorCube : MonoBehaviour
         {
             tilemap.material.SetFloat("_GrayscaleAmount", 0f);
         }
-        Destroy(this.gameObject);
+    }
+
+    public void DisColor()
+    {
+        foreach (TilemapRenderer tilemap in tilemaps)
+        {
+            tilemap.material.SetFloat("_GrayscaleAmount", 1f);
+        }
     }
 }
