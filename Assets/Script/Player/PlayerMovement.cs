@@ -105,6 +105,6 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canAttack()
     {
-        return isGrounded;
+        return true;
     }
 }
