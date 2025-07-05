@@ -74,12 +74,14 @@ public class PlayerHealth : MonoBehaviour
     {
         transform.position = respawnPoint;
         rb.velocity = Vector2.zero;
+        
         GetComponent<PlayerAttack>().formManager.LoadForms();
+        GetComponent<PlayerAttack>().formManager.ChangeForm(0);
+        
         if (playerMovement.keyFollower != null)
         {
             playerMovement.keyFollower.GetComponent<Key>().DropKey();
         }
-            
         
         Debug.Log("Player respawned at start.");
     }
