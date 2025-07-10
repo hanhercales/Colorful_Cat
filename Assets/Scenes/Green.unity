@@ -8448,7 +8448,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2112262207, guid: d0607c16aa6e4294bb51f4a97e2a5a53, type: 3}
       - {fileID: -1226797589, guid: d0607c16aa6e4294bb51f4a97e2a5a53, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 46, y: -3, z: 0}
@@ -8475,7 +8475,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2112262207, guid: d0607c16aa6e4294bb51f4a97e2a5a53, type: 3}
       - {fileID: -1226797589, guid: d0607c16aa6e4294bb51f4a97e2a5a53, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 49, y: -3, z: 0}
@@ -8738,11 +8738,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5017676329201728657, guid: 7ded2f8de78e91a43b2bcc8899dea780, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.054
+      value: -5.0492973
       objectReference: {fileID: 0}
     - target: {fileID: 5017676329201728657, guid: 7ded2f8de78e91a43b2bcc8899dea780, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.753
+      value: -1.753001
       objectReference: {fileID: 0}
     - target: {fileID: 5017676329201728657, guid: 7ded2f8de78e91a43b2bcc8899dea780, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8900,10 +8900,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5428120105026932726, guid: 22b11587ee9c80c449a6ea13e272a881, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1662017060}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b11587ee9c80c449a6ea13e272a881, type: 3}
 --- !u!1001 &1086485205
 PrefabInstance:
@@ -9103,30 +9100,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf26260bac26a04986397dd1b1866dd, type: 3}
---- !u!1 &1662017054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5428120105026932726, guid: 22b11587ee9c80c449a6ea13e272a881, type: 3}
-  m_PrefabInstance: {fileID: 988194232}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1662017060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662017054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1577af6d1490dff4bb7ef24f84e43785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalPosition: {x: 0, y: 0, z: 0}
-  idleFloatSpeed: 1.5
-  idleFloatStrength: 0.25
-  horizontalOffset: -0.7
-  verticalOffset: 0.4
-  followFloatSpeed: 2
-  followFloatStrength: 0.2
 --- !u!1001 &1689358944
 PrefabInstance:
   m_ObjectHideFlags: 0
